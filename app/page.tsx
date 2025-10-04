@@ -98,8 +98,7 @@ export default function Home() {
           <div className="mockup-code">
             <pre data-prefix="$">
               <code>
-                curl -X POST https://api.md2tg.projectstain.dev/ -d
-                '&#123;\"markdown\":\"# hello world\"&#125;'
+                {`curl -X POST https://api.md2tg.projectstain.dev/ -d '{"markdown":"# hello world"}'`}
               </code>
             </pre>
           </div>
