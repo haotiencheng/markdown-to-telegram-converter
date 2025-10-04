@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@n8n_io/n8n-demo-component':
+        specifier: ^1.0.20
+        version: 1.0.20
       '@opennextjs/cloudflare':
         specifier: ^1.9.1
         version: 1.9.1(wrangler@4.42.0)
@@ -28,7 +31,7 @@ importers:
         specifier: ^3
         version: 3.3.1
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.1.14
         version: 4.1.14
       '@types/node':
         specifier: ^20
@@ -49,7 +52,7 @@ importers:
         specifier: 15.5.4
         version: 15.5.4(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.1.14
         version: 4.1.14
       typescript:
         specifier: ^5
@@ -946,6 +949,15 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
+  '@lit-labs/ssr-dom-shim@1.4.0':
+    resolution: {integrity: sha512-ficsEARKnmmW5njugNYKipTm4SFnbik7CXtoencDZzmzo/dQ+2Q0bgkzJuoJP20Aj0F+izzJjOqsnkd6F/o1bw==}
+
+  '@lit/reactive-element@1.6.3':
+    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
+
+  '@n8n_io/n8n-demo-component@1.0.20':
+    resolution: {integrity: sha512-+ga7I/Hw4b/Qs+TVLoQCHtlFmgPqeCqemA1/5tCiKsZlcdHFG0s4DZnPqyvt3m/TTuVgU0lu2Kmae+9ZzU75eg==}
+
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
@@ -1553,6 +1565,9 @@ packages:
 
   '@types/react@19.2.0':
     resolution: {integrity: sha512-1LOH8xovvsKsCBq1wnT4ntDUdCJKmnEakhsuoUSy6ExlHCkGP2hqnatagYTgFk6oeL0VU31u7SNjunPN+GchtA==}
+
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
   '@typescript-eslint/eslint-plugin@8.45.0':
     resolution: {integrity: sha512-HC3y9CVuevvWCl/oyZuI47dOeDF9ztdMEfMH8/DW/Mhwa9cCLnK1oD7JoTVGW/u7kFzNZUKUoyJEqkaJh5y3Wg==}
@@ -2753,6 +2768,15 @@ packages:
   lightningcss@1.30.1:
     resolution: {integrity: sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==}
     engines: {node: '>= 12.0.0'}
+
+  lit-element@3.3.3:
+    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
+
+  lit-html@2.8.0:
+    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
+
+  lit@2.8.0:
+    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
 
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
@@ -5014,6 +5038,16 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  '@lit-labs/ssr-dom-shim@1.4.0': {}
+
+  '@lit/reactive-element@1.6.3':
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.4.0
+
+  '@n8n_io/n8n-demo-component@1.0.20':
+    dependencies:
+      lit: 2.8.0
+
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
       '@emnapi/core': 1.5.0
@@ -5823,6 +5857,8 @@ snapshots:
   '@types/react@19.2.0':
     dependencies:
       csstype: 3.1.3
+
+  '@types/trusted-types@2.0.7': {}
 
   '@typescript-eslint/eslint-plugin@8.45.0(@typescript-eslint/parser@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -7212,6 +7248,22 @@ snapshots:
       lightningcss-linux-x64-musl: 1.30.1
       lightningcss-win32-arm64-msvc: 1.30.1
       lightningcss-win32-x64-msvc: 1.30.1
+
+  lit-element@3.3.3:
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.4.0
+      '@lit/reactive-element': 1.6.3
+      lit-html: 2.8.0
+
+  lit-html@2.8.0:
+    dependencies:
+      '@types/trusted-types': 2.0.7
+
+  lit@2.8.0:
+    dependencies:
+      '@lit/reactive-element': 1.6.3
+      lit-element: 3.3.3
+      lit-html: 2.8.0
 
   locate-path@6.0.0:
     dependencies:
