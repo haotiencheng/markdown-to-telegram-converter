@@ -6,16 +6,13 @@ import { Clipboard, Check } from "lucide-react";
 const convertToTelegramMarkdownV2 = async (
   rawMarkdown: string
 ): Promise<string> => {
-  const data = await fetch(
-    "https://telegramify-markdown.haotiencheng1217.workers.dev/",
-    {
-      method: "POST",
-      body: JSON.stringify({ markdown: rawMarkdown }),
-    }
-  );
+  const response = await fetch("https://api.md2tg.projectstain.dev/", {
+    method: "POST",
+    body: JSON.stringify({ markdown: rawMarkdown }),
+  });
 
-  const { telegram_text } = await data.json();
-  return telegram_text;
+  const { data } = await response.json();
+  return data.telegram_text;
 };
 
 export default function Home() {
@@ -73,6 +70,7 @@ export default function Home() {
               className="textarea h-24 border-2 w-full"
               placeholder="Converted Telegram MarkdownV2 will appear here..."
               disabled
+              value={outputText}
             ></textarea>
             <button
               className="btn btn-ghost btn-sm absolute top-2 right-2"
