@@ -1,6 +1,4 @@
-import { Suspense } from "react";
-
-import("@n8n_io/n8n-demo-component/n8n-demo.bundled.js");
+import { Suspense, useEffect, createElement } from "react";
 
 const workflow = `{
   "nodes": [
@@ -21,10 +19,7 @@ const workflow = `{
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        -32,
-        -112
-      ],
+      "position": [-32, -112],
       "id": "607cd8b0-ce71-4fa0-b20f-7376421c3022",
       "name": "Telegramify Markdown Converter"
     },
@@ -38,10 +33,7 @@ const workflow = `{
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        224,
-        -112
-      ],
+      "position": [224, -112],
       "id": "2fdb2e4a-c1da-4784-8195-6e71fbc434ca",
       "name": "Send a text message",
       "webhookId": "c016a89c-c7ee-4fa5-b27b-3d2905047123",
@@ -73,9 +65,15 @@ const workflow = `{
 }`;
 
 export default function N8nDemo() {
-  return (
-    <Suspense>
-      <n8n-demo workflow={workflow} frame="true"></n8n-demo>
-    </Suspense>
+  useEffect(() => {
+    import("@n8n_io/n8n-demo-component/n8n-demo.bundled.js").catch(
+      console.error
+    );
+  }, []);
+
+  return createElement(
+    Suspense,
+    { fallback: createElement("div", null, <div className="loading"></div>) },
+    createElement("n8n-demo", { workflow, frame: "true" })
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Clipboard, Check } from "lucide-react";
 import N8nDemo from "@/app/components/N8nDemo";
+import Image from "next/image";
 
 const convertToTelegramMarkdownV2 = async (
   rawMarkdown: string
@@ -45,9 +46,17 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-4 lg:p-24 bg-base-200">
       <div className="w-full max-w-5xl">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Markdown to Telegram MarkdownV2 Converter
-        </h1>
+        <div className="flex flex-col md:flex-row items-center justify-center mb-8 gap-4">
+          <Image
+            src={"/icon-192.png"}
+            width={50}
+            height={50}
+            alt="md2tg icon"
+          />
+          <h1 className="text-2xl md:text-4xl font-bold text-center">
+            Markdown to Telegram MarkdownV2 Converter
+          </h1>
+        </div>
 
         <div className="flex flex-col gap-2 md:grid md:grid-cols-3 md:grid-rows-1 items-center justify-center">
           {/* Input TextArea */}
